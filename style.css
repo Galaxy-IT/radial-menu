@@ -1,0 +1,120 @@
+body{
+    margin:0;
+    background-color:#fff;
+    height:700vh;
+    overflow: hidden;
+  }
+  .circle-container{
+      position: relative;
+      /* z-index: 4; */
+  }
+  #scroll{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    overflow: auto;
+    z-index: 4;
+    
+
+  }
+  #sm{
+   position:relative;
+    width: 100%;
+    height: 600vh;
+    /* z-index: 1; */
+    pointer-events: none;
+  }
+  #circleWrap{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top:50%;
+    left: -25%;
+    z-index: 5;
+    counter-reset: section;
+  }
+  svg {
+    position:absolute;
+    height: 100vh;
+    top:50%;
+    left:50%;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .item{
+    position: absolute;
+    width: max-content;
+    height: auto;
+    z-index: 5;
+    transition:.3s linear;
+    perspective: 1000px;
+    
+
+
+  }
+  .item:after{
+    counter-increment: section;
+    content: counters(section, ".", decimal-leading-zero);
+    position: absolute;
+    bottom: 0;
+    right: -35px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .item span{
+    /* background-color: green; */
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    color: #000;
+    transition:.3s linear;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+  }
+  .item img{
+      /* width: 300px; */
+      /* height: 300px; */
+      /* object-fit: cover; */
+      position: absolute;
+      bottom: -150px;
+      right: 0px;
+      transition: .3s linear;
+      opacity: 0;
+      /* visibility: hidden; */
+      pointer-events: none;
+      transform-origin:left center;
+      
+
+  }
+  .item:hover span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  }
+  /* .item.hover_img img{
+    right: -450px;
+    opacity: 1;
+    visibility: visible;
+  } */
+  
+  #circle {
+    fill: transparent;
+  }
+  .mouse{
+      transition: .3s linear;
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  .mouse.mouse_visible{
+      opacity: 1;
+      visibility: visible;
+  }
